@@ -6,8 +6,10 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="relative bg-gray-200 overflow-hidden">
-      <App/>
+    <div className="flex h-screen bg-gray-200 items-center md:items-start md:h-full">
+      <div className="flex-grow">
+        <App/>
+      </div>
     </div>
   </React.StrictMode>,
   document.getElementById('root')
