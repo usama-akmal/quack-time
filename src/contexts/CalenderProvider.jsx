@@ -9,7 +9,7 @@ const CalenderProvider = ({children}) => {
   const getFormattedDate = (date) => date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate()
 
   const [calender, setCalender] = useState({
-    selectedDate: new Date(2026,1,1),
+    selectedDate: new Date(),
     currentDate: new Date()
   })
 
