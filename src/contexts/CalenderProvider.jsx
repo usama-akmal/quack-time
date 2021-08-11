@@ -9,7 +9,7 @@ const CalenderProvider = ({children}) => {
   const getFormattedDate = (date) => date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate()
 
   const [calender, setCalender] = useState({
-    selectedDate: new Date(),
+    selectedDate: new Date(2026,1,1),
     currentDate: new Date()
   })
 
@@ -46,7 +46,7 @@ const CalenderProvider = ({children}) => {
 
     let days = [...prevMonth, ...currentMonth, ...nextMonth] 
 
-    days = days.length === 35 ? [...prevMonth, ...currentMonth, ...getNextMonth(nextMonthDays + 7, nextMonthDate) ] : days
+    days = days.length === 35 ? [...prevMonth, ...currentMonth, ...getNextMonth(nextMonthDays + 7, nextMonthDate) ] : (days.length === 28 ? [...prevMonth, ...currentMonth, ...getNextMonth(nextMonthDays + 14, nextMonthDate) ] : days)
     return days
   }
 
